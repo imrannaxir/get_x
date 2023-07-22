@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/counter.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class DialogAndBottomSheet extends StatefulWidget {
+  const DialogAndBottomSheet({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<DialogAndBottomSheet> createState() => _DialogAndBottomSheetState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DialogAndBottomSheetState extends State<DialogAndBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

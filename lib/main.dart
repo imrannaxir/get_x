@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/home_screen.dart';
+import 'package:get_x/dialog_and_bottomsheet.dart';
 
 void main() {
   runApp(
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const HomeScreen(),
+      home: const DialogAndBottomSheet(),
     );
   }
 }
@@ -35,6 +35,24 @@ class MyApp extends StatelessWidget {
   State management 
     Get has two different state managers: 
     The simple state manager (we'll call it GetBuilder) and
-    the reactive state manager (GetX/Obx)   
+    the reactive state manager (GetX/Obx)  
+
+
+
+    Create a new Repository 
+
+        git init
+        git add .
+        git commit -m "GetX"
+        git remote add origin https://github.com/imrannaxir/get_x.git
+        git push -u origin master
+
+
+    Push an Existing Repository 
+       git add .
+       git commit -m "Updated some files or folders etc."
+       git push -u origin main 
+
+
 
  */
