@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x/dialog_and_bottomsheet.dart';
+import 'package:get_x/navigation.dart';
+import 'package:get_x/screen_one.dart';
+import 'package:get_x/screen_two.dart';
 
 void main() {
   runApp(
@@ -15,10 +18,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      locale: const Locale('English', 'US'),
+      fallbackLocale: const Locale('English', 'US'),
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const DialogAndBottomSheet(),
+      home: const NavigationScreen(),
+      // getPages: [
+      //   GetPage(
+      //     name: '/',
+      //     page: () => const NavigationScreen(),
+      //   ),
+      //   GetPage(
+      //     name: '/screenOne',
+      //     page: () =>  ScreenOne(),
+      //   ),
+      //   GetPage(
+      //     name: '/screenTwo',
+      //     page: () => const ScreenTwo(),
+      //   ),
+      // ],
     );
   }
 }
