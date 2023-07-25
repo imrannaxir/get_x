@@ -53,7 +53,8 @@ class _ScreenOneState extends State<ScreenOne> {
           ),
           const SizedBox(height: 30),
           Text(
-            Get.arguments[1],
+            widget.name,
+            // Get.arguments[1],
             style: const TextStyle(
               fontSize: 16,
               color: Colors.black,

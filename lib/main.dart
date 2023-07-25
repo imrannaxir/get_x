@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/dialog_and_bottomsheet.dart';
-import 'package:get_x/navigation.dart';
-import 'package:get_x/screen_one.dart';
-import 'package:get_x/screen_two.dart';
+import 'package:get_x/languages.dart';
+import 'package:get_x/listview_with_getx.dart';
 
 void main() {
   runApp(
@@ -18,12 +16,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: const Locale('English', 'US'),
-      fallbackLocale: const Locale('English', 'US'),
+      translations: Languages(),
+      // locale: const Locale('English', 'US'),
+      // fallbackLocale: const Locale('English', 'US'),
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const NavigationScreen(),
+      home: const ListViewWithGetX(),
+
       // getPages: [
       //   GetPage(
       //     name: '/',
@@ -45,16 +45,32 @@ class MyApp extends StatelessWidget {
 
 
 /*
+
+  State Management : 
+    Get has two different state managers: 
+    The simple state manager (we'll call it GetBuilder) and
+    the reactive state manager (GetX/Obx)  
+
+
   GetX has 3 basic principles :
     1) PRODUCTIVITY
     2) PERFORMANCE 
     3) ORGANIZATION.
 
+  Obs : 
+    Obs stands for "Observable." It is a class provided by GetX 
+    that represents an observable value.
+    When you wrap a variable with Obs, it becomes reactive, meaning that any
+    changes to the value will automatically trigger updates in the user interface.
+    This is achieved by using GetX's reactive programming features.
+  
+  Obx:
+    Obx is a widget provided by GetX that can be used to listen 
+    to changes in an Obs variable and rebuild the UI accordingly.
+    When the Obs variable changes, the Obx widget will automatically
+    rebuild the part of the UI that depends on that variable.
 
-  State management 
-    Get has two different state managers: 
-    The simple state manager (we'll call it GetBuilder) and
-    the reactive state manager (GetX/Obx)  
+  
 
 
 

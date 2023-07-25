@@ -41,19 +41,19 @@ class _NavigationScreenState extends State<NavigationScreen> {
                   //   ),
                   // );
 
-                  // Get.to(
-                  //   const ScreenOne(
-                  //     name: 'Hi , Navigation by GetX',
-                  //   ),
-                  //);
-                  Get.toNamed(
-                    '/screenOne',
-                    arguments: [
-                      'Imran Nazeer',
-                      'Bashir Ahmad',
-                      'Flutter Developer',
-                    ],
+                  Get.to(
+                    ScreenOne(
+                      name: 'Hi , Navigation by GetX',
+                    ),
                   );
+                  // Get.toNamed(
+                  //   '/screenOne',
+                  //   arguments: [
+                  //     'Imran Nazeer',
+                  //     'Bashir Ahmad',
+                  //     'Flutter Developer',
+                  //   ],
+                  // );
                 },
                 child: const Text(
                   'Screen One',
