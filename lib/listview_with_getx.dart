@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/example_two_controller.dart';
 import 'package:get_x/listview_controller.dart';
 
 class ListViewWithGetX extends StatefulWidget {

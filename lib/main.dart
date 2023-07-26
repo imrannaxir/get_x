@@ -1,7 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x/view/splash_screen.dart';
+
+void main() {
+  runApp(
+    const MyApp(),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
+      home: const SplashScreen(),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_x/languages.dart';
-import 'package:get_x/listview_with_getx.dart';
+import 'package:get_x/login.dart';
 
 void main() {
   runApp(
@@ -22,7 +60,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const ListViewWithGetX(),
+      home: const LoginScreen(),
 
       // getPages: [
       //   GetPage(
@@ -44,7 +82,7 @@ class MyApp extends StatelessWidget {
 
 
 
-/*
+
 
   State Management : 
     Get has two different state managers: 
