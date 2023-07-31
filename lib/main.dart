@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/view/splash_screen.dart';
+import 'package:get_x/resources/localization/languages.dart';
+import 'package:get_x/resources/routes/routes.dart';
 
 void main() {
   runApp(
@@ -15,10 +16,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      translations: Languages(),
+      locale: const Locale('English', 'US'),
+      // locale: const Locale('UR', 'PK'),
+      fallbackLocale: const Locale('English', 'US'),
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const SplashScreen(),
+      getPages: AppRoutes.appRoutes(),
     );
   }
 }
@@ -54,7 +59,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      translations: Languages(),
+      // translations: Languages(),
       // locale: const Locale('English', 'US'),
       // fallbackLocale: const Locale('English', 'US'),
       theme: ThemeData(
