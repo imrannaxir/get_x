@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x/resources/colors/app_color.dart';
 
-class InternetExceptionWidget extends StatefulWidget {
+class GeneralExceptionWidget extends StatefulWidget {
   final VoidCallback onPress;
-  const InternetExceptionWidget({super.key, required this.onPress});
+  const GeneralExceptionWidget({super.key, required this.onPress});
 
   @override
-  State<InternetExceptionWidget> createState() =>
-      _InternetExceptionWidgetState();
+  State<GeneralExceptionWidget> createState() => _GeneralExceptionWidgetState();
 }
 
-class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
+class _GeneralExceptionWidgetState extends State<GeneralExceptionWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -30,7 +29,7 @@ class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
             padding: const EdgeInsets.only(top: 30),
             child: Center(
               child: Text(
-                'internet_exception'.tr,
+                'general_exception'.tr,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -41,7 +40,7 @@ class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
           InkWell(
             onTap: widget.onPress,
             child: Container(
-              height: 44,
+              height: 50,
               width: 160,
               decoration: BoxDecoration(
                 color: AppColor.primaryColor,

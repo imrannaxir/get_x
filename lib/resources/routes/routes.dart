@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:get_x/login.dart';
 import 'package:get_x/resources/routes/routes_name.dart';
+import 'package:get_x/view/login/login_view.dart';
 import 'package:get_x/view/splash_screen.dart';
 
 class AppRoutes {
@@ -14,9 +14,9 @@ class AppRoutes {
           transitionDuration: const Duration(milliseconds: 250),
         ),
         GetPage(
-          name: RoutesName.loginScreen,
+          name: RoutesName.loginView,
           page: () {
-            return const LoginScreen();
+            return const LoginView();
           },
           transition: Transition.leftToRightWithFade,
           transitionDuration: const Duration(milliseconds: 250),
