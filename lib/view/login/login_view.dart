@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x/resources/components/round_button.dart';
 import 'package:get_x/utils/utils.dart';
-import 'package:get_x/view_models/controller/login_view_model.dart';
+import '../../view_models/controller/login/login_controller.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -15,7 +15,7 @@ class _LoginViewState extends State<LoginView> {
   /*
   
   */
-  final loginViewModel = Get.put(LoginViewModel());
+  final loginViewModel = Get.put(LoginController());
   final _formKey = GlobalKey<FormState>();
   /*
   

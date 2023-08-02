@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x/models/login/user_model.dart';
 import 'package:get_x/repository/login_repository/login_repository.dart';
-import '../../utils/utils.dart';
+import 'package:get_x/view/home/home_view.dart';
+import 'package:get_x/view_models/controller/user_preference.dart/user_preference.dart';
+import '../../../utils/utils.dart';
 
-class LoginViewModel extends GetxController {
+class LoginController extends GetxController {
   /*
     
   */
 
+  UserPreference userPreference = UserPreference();
   final _api = LoginRepository();
 
   final emailController = TextEditingController().obs;
@@ -27,9 +31,20 @@ class LoginViewModel extends GetxController {
     };
     _api.loginApi(data).then((value) {
       loading.value = false;
+
       if (value['error'] == 'user not found') {
         Utils.snackBar('Error', value['error']);
       } else {
+        UserModel userModel = UserModel(
+          token: value['token'],
+          isLogin: true,
+        );
+        userPreference
+            .saveUser(userModel)
+            .then((value) {})
+            .onError((error, stackTrace) {});
+        Get.to(HomeView());
+
         Utils.snackBar('Login', 'Login Succesfully');
       }
     }).onError((error, stackTrace) {
