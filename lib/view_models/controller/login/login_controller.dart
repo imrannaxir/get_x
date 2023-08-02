@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x/models/login/user_model.dart';
 import 'package:get_x/repository/login_repository/login_repository.dart';
-import 'package:get_x/view/home/home_view.dart';
+import 'package:get_x/resources/routes/routes_name.dart';
 import 'package:get_x/view_models/controller/user_preference.dart/user_preference.dart';
 import '../../../utils/utils.dart';
 
 class LoginController extends GetxController {
   /*
-    
+     
   */
 
   UserPreference userPreference = UserPreference();
@@ -43,7 +43,11 @@ class LoginController extends GetxController {
             .saveUser(userModel)
             .then((value) {})
             .onError((error, stackTrace) {});
-        Get.to(HomeView());
+
+        Get.delete<LoginController>();
+        Get.toNamed(RoutesName.homeView)!.then(
+          (value) {},
+        );
 
         Utils.snackBar('Login', 'Login Succesfully');
       }

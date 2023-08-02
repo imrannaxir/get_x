@@ -17,6 +17,7 @@ class _LoginViewState extends State<LoginView> {
   */
   final loginViewModel = Get.put(LoginController());
   final _formKey = GlobalKey<FormState>();
+
   /*
   
   */
@@ -89,14 +90,14 @@ class _LoginViewState extends State<LoginView> {
             const SizedBox(height: 40),
             Obx(() {
               return RoundButton(
-              title: 'login'.tr,
-              loading: loginViewModel.loading.value,
-              onPress: () {
-                if (_formKey.currentState!.validate()) {
-                  loginViewModel.loginApi();
-                } 
-              },
-            );
+                title: 'login'.tr,
+                loading: loginViewModel.loading.value,
+                onPress: () {
+                  if (_formKey.currentState!.validate()) {
+                    loginViewModel.loginApi();
+                  }
+                },
+              );
             })
           ],
         ),

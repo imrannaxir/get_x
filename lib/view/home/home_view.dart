@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x/data/response/status.dart';
+import 'package:get_x/resources/components/general_exception.dart';
+import 'package:get_x/resources/components/internet_exception_widget.dart';
 import 'package:get_x/resources/routes/routes_name.dart';
 import 'package:get_x/view_models/controller/home/home_controller.dart';
 import 'package:get_x/view_models/controller/user_preference.dart/user_preference.dart';
@@ -64,11 +66,15 @@ class _HomeViewState extends State<HomeView> {
             );
 
           case Status.ERROR:
-            return const Center(
-              child: Text(
-                'Something went wrong!',
-              ),
-            );
+            if (homeController.error.value == 'No internet') {
+              return InternetExceptionWidget(onPress: () {
+                homeController.refreshApi();
+              });
+            } else {
+              return GeneralExceptionWidget(onPress: () {
+                homeController.refreshApi();
+              });
+            }
 
           case Status.COMPLETED:
             return ListView.builder(
